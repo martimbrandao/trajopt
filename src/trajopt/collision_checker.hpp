@@ -70,7 +70,7 @@ public:
   virtual void IncludeCollisionPair(const KinBody::Link& link0, const KinBody::Link& link1) = 0;
 
   /** Check whether a raycast hits the environment */
-  virtual bool RayCastCollision(const OpenRAVE::Vector& point1, const OpenRAVE::Vector& point2) = 0;
+  virtual bool RayCastCollision(const OpenRAVE::Vector& point1, const OpenRAVE::Vector& point2, OpenRAVE::Vector& hitPoint) = 0;
 
 
   OpenRAVE::EnvironmentBaseConstPtr GetEnv() {return m_env;}
