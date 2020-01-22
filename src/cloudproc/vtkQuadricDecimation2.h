@@ -61,7 +61,7 @@ class vtkPointData;
 class vtkPriorityQueue;
 class vtkDoubleArray;
 
-class VTK_GRAPHICS_EXPORT vtkQuadricDecimation2 : public vtkPolyDataAlgorithm
+class vtkQuadricDecimation2 : public vtkPolyDataAlgorithm
 {
 public:
   vtkTypeMacro(vtkQuadricDecimation2, vtkPolyDataAlgorithm);

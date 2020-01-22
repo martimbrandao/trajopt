@@ -159,7 +159,9 @@ btCollisionShape* createShapePrimitive(OR::KinBody::Link::GeometryPtr geom, bool
   }
   case OpenRAVE::GT_TriMesh: {
     const OpenRAVE::TriMesh &mesh = geom->GetCollisionMesh();
-    assert(mesh.indices.size() >= 3);
+    //assert(mesh.indices.size() >= 3);
+    if (mesh.indices.size() < 3)
+      return NULL;
     boost::shared_ptr<btTriangleMesh> ptrimesh(new btTriangleMesh());
 
     for (size_t i = 0; i < mesh.indices.size(); i += 3) {
