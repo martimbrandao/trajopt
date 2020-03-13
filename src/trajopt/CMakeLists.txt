@@ -33,5 +33,3 @@ add_subdirectory(test)
 include_directories(${PYTHON_NUMPY_INCLUDE_DIR})
 boost_python_module(ctrajoptpy trajoptpy.cpp)
 target_link_libraries(ctrajoptpy trajopt ${Boost_SYSTEM_LIBRARY} )
-
-

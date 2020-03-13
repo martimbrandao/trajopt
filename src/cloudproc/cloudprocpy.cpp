@@ -25,7 +25,7 @@ namespace py = boost::python;
 typedef PointCloud<PointXYZ> CloudXYZ;
 typedef PointCloud<PointNormal> CloudXYZN;
 
-py::object np_mod, main, globals;
+py::object np_mod, pymain, globals;
 
 template<typename T>
 struct type_traits {
@@ -195,8 +195,8 @@ py::object pyGetRGBD(CloudGrabber* grabber) {
 BOOST_PYTHON_MODULE(cloudprocpy) {
 
   np_mod = py::import("numpy");
-  main = py::import("__main__");
-  globals = main.attr("__dict__");
+  pymain = py::import("__main__");
+  globals = pymain.attr("__dict__");
 
   boost_register_cloud_type<PointXYZ>("CloudXYZ");
   boost_register_cloud_type<PointXYZRGB>("CloudXYZRGB");
